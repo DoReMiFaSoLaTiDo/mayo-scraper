@@ -1,9 +1,10 @@
-# author: Michael Fashola
+# Author: Michael Fashola
+# About: This code is similar to main.py but works with an existing file to fetch
+#         the necessary data from Mayo Clinic with less clean-up required afterwards.
 
 import string
 import requests
 import pandas  as pd
-import json
 from bs4 import BeautifulSoup
 from time import sleep
 from random import randint
@@ -31,5 +32,4 @@ for letter in letters:
 
     # Output final file for letter
     df["content"] = content_list
-    df.to_json("disease_data_{}.json".format(letter), orient="records", force_ascii=False)
-
+    df.to_json("results/disease_data_{}.json".format(letter), orient="records", force_ascii=False)
