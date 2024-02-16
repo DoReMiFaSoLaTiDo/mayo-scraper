@@ -20,7 +20,7 @@ for letter in letters:
         if row["name"].startswith(letter):
             print("Fetching content for {}".format(row["name"]))
             response = requests.get(row["href"])
-            soup = BeautifulSoup(response.text, features="html.parser")
+            soup = BeautifulSoup(response.text, 'html.parser')
             nodeList = soup.find_all("div", "row")
             if (len(nodeList) >= 3):
                 content_list.append(nodeList[3].get_text())
