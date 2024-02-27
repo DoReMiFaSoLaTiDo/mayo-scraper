@@ -57,4 +57,5 @@ for treatment_file in treatment_files:
       if disease_name != None and content != None and master_df.loc[disease_name, 'treatment'] == None:
           master_df.loc[disease_name, 'treatment'] = content
 
+master_df.reset_index(inplace=True)
 master_df.to_json("results/main.json", orient="records", force_ascii=False)
